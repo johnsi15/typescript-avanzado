@@ -61,3 +61,4 @@ Para ello, en la terminal digitamos `npx ts-node` seguido del nombre del archivo
 
 En nuestro caso, nuestro archivo `demo.ts` se encuentra dentro de la carpeta **src**.
 
+***Nota:*** `ts-node` se puede correr en producción pero se recomienda que se use en dev y en un ambiente de `node.js`, para proyectos de front-end si es necesario estar haciendo la transpilación de **ts** a **js**.

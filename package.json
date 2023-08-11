@@ -10,7 +10,7 @@
   "author": "John Serrano",
   "license": "MIT",
   "devDependencies": {
-    "ts-node": "^10.9.1",
-    "typescript": "^5.1.6"
+    "ts-node": "10.9.1",
+    "typescript": "5.1.6"
   }
 }
