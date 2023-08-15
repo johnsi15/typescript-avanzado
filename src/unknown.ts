@@ -33,6 +33,11 @@ if (typeof unknownVar === 'boolean') { // validamos primero que el type realment
   console.log(isNew2)
 }
 
+if (Array.isArray(unknownVar)) { // validamos primero que el type realmente sea un array en este caso
+  let isNew2: string[] = unknownVar;
+  console.log(isNew2)
+}
+
 // let isNew2: boolean = unknownVar; // nos marca error
 
 // Code snippet from unknown.ts example
