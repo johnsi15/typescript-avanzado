@@ -21,3 +21,6 @@ console.log(example('Hola')) //'Es un string'
 console.log(example([1, 1, 1, 1])) // 'Es un array'
 console.log(example(1212)) // error: Uncaught Error: Not Match
 console.log(example('Hola después del fail')) // NUNCA SE EJECUTA, porque se lanzó un error previamente
+
+// Never vs. Void
+// Las funciones del tipo void son aquellas que no retornan ningún dato, simplemente ejecutan las instrucciones dentro del bloque de la función. Por tanto, no debemos confundirlas con las de tipo never
