@@ -13,3 +13,8 @@ export type UpdateProductDto = Partial<CreateProductDto> // ✅
 
 // El contrario de Partial es Required
 type example2 = Required<Product> // Todos los datos son requeridos
+
+// El partial también puede ir como una interface o type aliases
+export type FindProductDto = Readonly<Partial<Product>>
+
+type example3 = Readonly<Product>
