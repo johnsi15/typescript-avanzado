@@ -31,8 +31,8 @@ export const addProduct = (data: CreateProductDto): Product => {
 
   return newData
 }
-
-export const updateProduct = (id: string, changes: UpdateProductDto): Product => {
+// Acceder al tipado por indice Product['id']
+export const updateProduct = (id: Product['id'], changes: UpdateProductDto): Product => {
 
   const index = products.findIndex((product) => product.id === id);
   if (index !== -1) {
