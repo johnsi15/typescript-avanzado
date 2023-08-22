@@ -15,6 +15,9 @@ export type UpdateProductDto = Partial<CreateProductDto> // ✅
 type example2 = Required<Product> // Todos los datos son requeridos
 
 // El partial también puede ir como una interface o type aliases
-export type FindProductDto = Readonly<Partial<Product>>
+// export type FindProductDto = Readonly<Partial<Product>>
+export interface FindProductDto extends Readonly<Partial<Omit<Product, 'tags'>>> {
+  readonly tags: ReadonlyArray<string>
+}
 
 type example3 = Readonly<Product>
