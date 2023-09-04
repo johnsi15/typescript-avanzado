@@ -1,5 +1,10 @@
 import { faker } from '@faker-js/faker';
-import { addProduct, products, updateProduct, findProducts } from './products/product.service';
+import {
+  addProduct,
+  products,
+  updateProduct,
+  findProducts,
+} from './products/product.service';
 
 for (let index = 0; index < 50; index++) {
   addProduct({
@@ -12,21 +17,22 @@ for (let index = 0; index < 50; index++) {
     size: faker.helpers.arrayElement(['S', 'M', 'L', 'XL']),
     tags: faker.helpers.arrayElements(['new', 'white', 'tshirt', 'clothes']),
     stock: faker.number.int({ min: 0, max: 100 }),
-    categoryId: faker.string.uuid()
-  })
+    categoryId: faker.string.uuid(),
+  });
 }
 
 // console.log(products)
-console.log(products[0])
-const product = products[0]
+console.log(products[0]);
+const product = products[0];
 const productUpdated = updateProduct(product.id, {
   title: 'New title product',
-  stock: 20
-})
+  stock: 20,
+});
 
-console.log(productUpdated)
+console.log(productUpdated);
 
 findProducts({
   title: 'Hello world',
-  stock: 10
-})
+  stock: 10,
+  tags: ['new'],
+});
