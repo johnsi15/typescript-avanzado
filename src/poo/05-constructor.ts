@@ -7,10 +7,12 @@ export class MyDate {
   constructor(
     public year: number = 2023,
     public month: number = 7,
-    private day: number = 10
+    private day: number = 10,
+    newValue: string
   ) {
     this.dbName = 'hello';
     this.#otherValue = null;
+    console.log(newValue); // It only has scope here
   }
 
   printFormat(): string {
