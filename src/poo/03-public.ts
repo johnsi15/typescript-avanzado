@@ -17,7 +17,8 @@ export class MyDate {
     return `${this.day}/${this.month}/${this.year}`;
   }
 
-  add(amount: number, type: 'days' | 'months' | 'years') {
+  public add(amount: number, type: 'days' | 'months' | 'years') {
+    // methods can also be public by default
     if (type === 'days') {
       this.day += amount;
     } else if (type === 'months') {
