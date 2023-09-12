@@ -5,8 +5,8 @@ date.getTime();
 
 console.log(date);
 
-class MyDate {
-  // propiedades
+export class MyDate {
+  // propiedades o atributos
   dbName: string;
   year: number;
   month: number;
