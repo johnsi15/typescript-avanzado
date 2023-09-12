@@ -57,12 +57,26 @@ export class MyDate {
     return this._day;
   }
 
+  get isLeapYear(): boolean {
+    const { year } = this;
+    // console.log(year);
+    if (year % 400 === 0) return true;
+    if (year % 100 === 0) return false;
+    return year % 4 === 0;
+  }
+
   #methodPrivate() {
     console.log('Other method private');
   }
 }
 
-const myDate = new MyDate();
+const myDate = new MyDate(2020);
+const myDate2 = new MyDate(2000);
+const myDate3 = new MyDate(2001);
+const myDate4 = new MyDate(2004);
 
-console.log(myDate.printFormat());
-console.log(myDate.day);
+myDate.day;
+console.log('My Date: ', myDate.day, myDate.isLeapYear);
+console.log('My Date 2: ', myDate2.day, myDate2.isLeapYear);
+console.log('My Date 3: ', myDate3.day, myDate3.isLeapYear);
+console.log('My Date 4: ', myDate4.day, myDate4.isLeapYear);
