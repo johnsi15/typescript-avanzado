@@ -70,6 +70,7 @@ export class MyDate {
   }
 
   set month(newValue: number) {
+    // si o si recibe datos por parametros
     if (newValue >= 1 && newValue <= 12) {
       this._month = newValue;
     } else {
