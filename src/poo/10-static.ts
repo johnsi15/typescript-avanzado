@@ -13,3 +13,4 @@ class MyMath {
 console.log('MyMath', MyMath.PI);
 console.log('MyMath', MyMath.max(1, 2, 5, 6, 8, 23, 5, 6, 7, 8));
 console.log('MyMath 2', MyMath.max(1, 2, 5, 6, -8, 23, -5, -6, 7, 8));
+console.log('MyMath 2', MyMath.max(-4, -5, -6, -2));
