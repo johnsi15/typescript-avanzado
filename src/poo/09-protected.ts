@@ -1,4 +1,4 @@
-export class Animal {
+export abstract class Animal {
   // protected -> Básicamente, es la forma de heredar propiedades y métodos.
   // Es similar a como funciona una propiedad o método privado, pero nos permite realizar herencia.
   constructor(protected name: string) {}
