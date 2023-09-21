@@ -1,12 +1,10 @@
-import axios from 'axios';
+import axios from 'axios'
 
-import { Product } from './models/product.model';
+import { Product } from './models/product.model'
 
-(async () => {
+;(async () => {
   async function getProducts() {
-    const { data } = await axios.get<Product[]>(
-      'https://api.escuelajs.co/api/v1/products'
-    );
+    const { data } = await axios.get<Product[]>('https://api.escuelajs.co/api/v1/products')
 
     // Otra forma de tipar seria el fetch:
     // const res = await axios.get(
@@ -14,12 +12,12 @@ import { Product } from './models/product.model';
     // );
     // const data = res.data as Product[];
 
-    data.forEach((product) => console.log(product.title));
+    data.forEach((product) => console.log(product.title))
 
-    return data;
+    return data
   }
 
-  const products = await getProducts();
+  const products = await getProducts()
   // console.log(products);
-  console.log(products.map((product) => `${product.id} - ${product.title}`));
-})();
+  console.log(products.map((product) => `${product.id} - ${product.title}`))
+})()

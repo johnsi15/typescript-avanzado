@@ -1,12 +1,12 @@
-import { Category } from './category.model';
+import { Category } from './category.model'
 
 export interface Product {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
-  images: string[];
-  creationAt: Date;
-  updatedAt: Date;
-  category: Category;
+  id: string
+  title: string
+  price: number
+  description: string
+  images: string[]
+  createdAt: Date
+  updatedAt: Date
+  category: Category
 }
