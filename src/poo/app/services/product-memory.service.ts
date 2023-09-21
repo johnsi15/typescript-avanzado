@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker'
 import { Product } from '../models/product.model'
 import { CreateProductDto, UpdateProductDto } from '../dtos/product.dto'
 
-class ProductMemoryService {
+export class ProductMemoryService {
   private products: Product[] = []
 
   create(data: CreateProductDto): Product {
@@ -25,7 +25,7 @@ class ProductMemoryService {
     return this.add(newData)
   }
 
-  add(product: Product) {
+  private add(product: Product) {
     this.products.push(product)
     return product
   }
@@ -41,19 +41,17 @@ class ProductMemoryService {
   }
 
   getById(id: Product['id']) {
-    return products.find((product) => product.id === id)
+    return this.products.find((product) => product.id === id)
   }
-}
 
-export const getAllProducts = () => {
-  return products
-}
+  get all() {
+    return this.products
+  }
 
-// Acceder al tipado por indice Product['id']
-
-export const deleteProduct = (id: string) => {
-  const index = products.findIndex((product) => product.id === id)
-  if (index !== -1) {
-    products.splice(index, 1)
+  delete(id: Product['id']) {
+    const index = this.products.findIndex((product) => product.id === id)
+    if (index !== -1) {
+      this.products.splice(index, 1)
+    }
   }
 }
