@@ -2,9 +2,11 @@ import { faker } from '@faker-js/faker'
 import { Product } from '../models/product.model'
 import { CreateProductDto, UpdateProductDto } from '../dtos/product.dto'
 import { ProductService } from '../models/produc-service.model'
+import axios from 'axios'
 
-export class ProductMemoryService implements ProductService {
+export class ProductHttpService implements ProductService {
   private products: Product[] = []
+  private url = 'https://api.escuelajs.co/api/v1/products?limit=10&offset=0'
 
   create(data: CreateProductDto): Product {
     // data.id = 'johufeuhfeuf'
@@ -46,7 +48,15 @@ export class ProductMemoryService implements ProductService {
   }
 
   get all() {
-    return this.products
+    return (async () => {
+      try {
+        const { data } = await axios.get<Product[]>(this.url)
+
+        return data
+      } catch (error) {
+        return 0
+      }
+    })()
   }
 
   delete(id: Product['id']) {

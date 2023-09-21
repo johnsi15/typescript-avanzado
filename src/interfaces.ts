@@ -1,5 +1,5 @@
-type Sizes = 'S' | 'M' | 'L' | 'XL';
-type userId = string | number;
+type Sizes = 'S' | 'M' | 'L' | 'XL'
+type userId = string | number
 
 // type Product = {
 //   id: string | number
@@ -9,7 +9,7 @@ type userId = string | number;
 //   size?: Sizes
 // }
 
-interface Product {
+export interface Product {
   id: number | string
   title: string
   createdAt: Date
@@ -17,17 +17,17 @@ interface Product {
   size?: Sizes
 }
 
-const products: Product[] = [];
+const products: Product[] = []
 
 products.push({
   id: 1,
   title: 'P1',
   createdAt: new Date(),
-  stock: 12
+  stock: 12,
 })
 
 const addProduct = (data: Product) => {
-  products.push(data);
+  products.push(data)
 }
 
 /*
