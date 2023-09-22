@@ -2,7 +2,7 @@ import { CreateProductDto, UpdateProductDto } from '../dtos/product.dto'
 import { Product } from './product.model'
 
 export interface ProductService {
-  create(data: CreateProductDto): Product | Promise<Product>
+  create(data: CreateProductDto): Product | Promise<Product | string>
 
   update(id: Product['id'], changes: UpdateProductDto): Product | Promise<Product>
 
