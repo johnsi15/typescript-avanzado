@@ -4,7 +4,17 @@ import { ProductService } from '../models/produc-service.model'
 import axios from 'axios'
 
 export class ProductHttpService implements ProductService {
-  private url = 'https://api.escuelajs.co/api/v1/products?limit=10&offset=0'
+  private static instance: ProductHttpService | null = null
+
+  private url = 'https://api.escuelajs.co/api/v1/products'
+
+  static getInstance() {
+    if (ProductHttpService.instance === null) {
+      ProductHttpService.instance = new ProductHttpService()
+    }
+
+    return ProductHttpService.instance
+  }
 
   async create(dto: CreateProductDto) {
     try {
