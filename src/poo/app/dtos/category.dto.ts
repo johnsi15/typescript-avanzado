@@ -1,4 +1,4 @@
-import { IsDate, IsEnum, IsNotEmpty, IsUrl, Length, validate, validateOrReject } from 'class-validator'
+import { IsDate, IsEnum, IsNotEmpty, IsUrl, Length, validateOrReject } from 'class-validator'
 import { AccessType, Category } from '../models/category.model'
 
 export interface ICreateCategoryDto extends Omit<Category, 'id'> {}
